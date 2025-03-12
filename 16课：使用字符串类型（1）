@@ -1,0 +1,25 @@
+# 字符
+s1 = 'hello world!'
+s2 = "你好，世界！"
+print(s1)
+print(s2)
+
+s5 = '''I love you
+I love my city.
+就像你永远爱我一样.
+I know you are the rainbow of my heart.
+就像你永远爱我一样.''' # 如果想字符串内打印多行话，可以用双引号开头，双引号结尾，或单引号开头，单引号结尾
+# 而且你在引号里如何排版，它就会在输出里如何排版
+print(s5)
+
+s6 = '\141\142\143\n\x61\x62\x63'# 如果字符串是有特殊含义的编码，就会输出该含义
+s7 = '\u9a86\t\u660a'
+s8 = r'\u9a86\t\u660a'# 如果在引号前面加上r，那么就不管字符串是否是特殊编码，长什么样就输出什么
+s9 = '\'hello world!\''# 想输出带单引号的hello world!可以用转义字符也就是\'hello world!\'
+s_9 = "'hello world!'"# 或者用双引号包裹单引号，这俩可以互用
+
+print(s6)
+print(s7)
+print(s8)
+print(s9)
+print(s_9)
