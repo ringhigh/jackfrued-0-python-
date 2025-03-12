@@ -1,0 +1,39 @@
+# 字符串相关运算
+# 拼接
+s1 = 'hello'
+s2 = 'world!'
+print(s1 + ' ' + s2)# 直接拼接
+# 重复
+s3 = s1 * 10 # 这个不是乘法，而是重复
+print(s3)
+# 比较
+print(s1 < s2)# 这么比较成立是因为它比的是字符串各个对应的字母在字母表中的位置
+print(s1 == 'hello')
+print(s1 > 'Hello')# 实际上小h比大H大
+print(ord('h'))# 可以用ord函数看其背后编码大小
+print(ord('H'))
+print('骆昊' < '王大锤')# 这个也不成立，因为比的还是字符背后编码的大小，想比较还是可以用ord函数
+
+# 成员
+print('he' in s1)# 和列表，元组都一样
+print('ok' not in s2)
+
+# 索引
+s4 = 'I love you.'
+print(s4[0],s4[7],s4[-1])# 索引也是差不多，但是每一位都会取到，包括你的空格也算一位
+# s4[0] = 'i' # 和元组一样不支持修改元素
+
+# 切片
+print(s4[2:6])
+print(s4[5:1:-1])
+print(s4[::-1])# 和列表，元组都一样
+
+# 遍历
+print('_' * 20)
+
+s5 = '长风破浪会有时，直挂云帆济沧海'
+for i in range(len(s5)):
+    print(s5[i])
+
+for ch in s5:
+    print(ch)# 和上面效果一样
