@@ -1,0 +1,36 @@
+# 相对复杂的元组
+scores = ([95,98,92],
+          [65,72,63],
+          [85,78,90],
+          [66,77,88],
+          [97,98,99])
+print(type(scores))# scores是个元组无疑，因为最外边是用括号围着
+print(type(scores[0]))# scores[0]就是scores的第一个元素，该元素是个列表
+print(scores)
+#scores[0] = [100,100,100] #硬要赋值，是不能赋值的'tuple' object does not support item assignment
+scores[0][0] = 100 # scores[0]：元组中第一个元素（即第一个列表）[0]中的第一个元素（即95）更改为100
+scores[0][1] = 100# 当然了如果元组中第一个子元素还是元组，那么这个式子就没用，因为元组改不了
+print(scores)
+
+a = 11,22,33,44 # 不用括号也能表示元组
+print(type(a))
+print(a)
+
+b,c,d,e = a # 相当于b,c,d,e =  11,22,33,44
+print(f'b = {b}')
+print(f'c = {c}')
+print(f'd = {d}')
+print(f'e = {e}')
+
+# f,g,h = a # 如果把4个元素赋值给3个变量就会报错，同理赋值给5个变量也一样，只不过报错信息略有不同
+# print(f'f = {f}')
+# print(f'g = {g}')
+# print(f'h = {h}')
+
+f,g,*h = a # 如果在某个变量前加*号，相当于打包，他会把多出的元素打包给这个变量，以确保每个变量都能分完数值
+print(f'f = {f}')
+print(f'g = {g}')
+print(f'h = {h}')
+
+b,c = c,b # 一个等式就可以交换变量了，等号后的往前赋值，一一对应
+print(f'b = {b},c = {c}')
