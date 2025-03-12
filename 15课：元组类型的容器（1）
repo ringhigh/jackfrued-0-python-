@@ -1,0 +1,43 @@
+# 元组
+nums = 35,12,98,67,53,80,21 # 用英文圆括号或者什么都不加，即可表示元组
+fruits = 'apple','banana','pitaya','waxberry'
+print(type(nums))# 打印类型
+print(type(fruits))
+# 算元素个数
+print(len(nums))
+print(len(fruits))
+# 索引和切片
+print(fruits[0],fruits[2],fruits[-1]) # 索引还是一样的，注意-1是0往前数也就是循环一个，是waxberry
+# fruits[0] = 'durian' # 元组不支持赋值和替换，增添等
+print(nums[1:4]) # 可以切片，[1:4]就是从第一个元素选到第3个元素
+print(nums[:3]) # 从0选到2
+print(nums[3::2])# 从3开始选，跨度为2
+print(nums[::-1])# 表示从尾到头完整取一遍
+# 比较运算
+print(nums < (35,22)) # 会用nums的数从头开始和括号里的数比大小，比如第一个都是35，那就比第2个，22大于12
+# 所以返回True，如果小于，返回False，如果相等还是False
+
+# 成员运算
+print(55 in nums) # 55在nums里面？
+print(80 in nums)
+print('peach' not in fruits)
+# 元组遍历
+for fruit in fruits: # 把元素在fruits里遍历一遍
+    print(fruit,end='\t')# python输出后默认会换行，end='\t'是制表符，阻止换行，每个元素排成一列且元素与元素有分隔
+print() # 为保持美观。防止输出后“进程已结束,退出代码0”贴上来
+# 元组的加减
+temp = nums + fruits# 元组虽然不能增删替换但是能加减，加减方式和列表一样
+print(temp)
+# 相对复杂的元组
+scores = ([95,98,92],
+          [65,72,63],
+          [85,78,90],
+          [66,77,88],
+          [97,98,99])
+print(type(scores))# scores是个元组无疑，因为最外边是用括号围着
+print(type(scores[0]))# scores[0]就是scores的第一个元素，该元素是个列表
+print(scores)
+#scores[0] = [100,100,100] #硬要赋值，是不能赋值的'tuple' object does not support item assignment
+scores[0][0] = 100 # scores[0]：元组中第一个元素（即第一个列表）[0]中的第一个元素（即95）更改为100
+scores[0][1] = 100# 当然了如果元组中第一个子元素还是元组，那么这个式子就没用，因为元组改不了
+print(scores)
