@@ -1,0 +1,61 @@
+# 大小写
+s1 = 'hello world!'
+print(s1.lower())# 全体小写
+print(s1.upper())# 全体大写
+print(s1.capitalize())# 首字母大写
+print(s1.title())# 每个单词首字母大写
+print(s1) # 实际上大写小写什么的只是在那次打印中被赋予的，实际上的字符串并没有被更改
+# 性质判定
+s2 = 'abc123456'
+print(s2.isalpha())# s2全是字母吗
+print(s2.isdigit())# s2全是数字吗
+print(s2.isalnum())# s2字母数字混用吗
+print(s2.startswith('abc'))# s2以abc开头吗
+print(s2.endswith('123'))# s2以123结尾吗
+# 查找字符
+s3 = 'I love you, I love my city.'
+print(s3.index('love'))# 会索引到第一个love所在的地点
+print(s3.index('love',5))# 从第5个字符开始索引
+# print(s3.index('love',15))# 索引不到就会报错
+print(s3.find('love',5))# find()函数在能找到的情况下，输出和上面的print(s3.index('love',5))一样
+print(s3.find('love',15))# 如果找不到，也不会报错，而是输出-1
+print(s3.rfind('love'))# 前面加r，意思是从后往前找，rindex也是从后往前找
+# 对齐和填充
+s4,s5 = 'Hello','123'
+print(s4.center(20))# 意思是用20个字符的空格，把s4的字符串居中
+print(s4.center(20,'~'))# 如果不想用空格填，可以这么写，这样就用~填满空格了
+print(s4.ljust(20,'~'))# 不仅可以居中，还可实现左对齐和右对齐
+print(s4.rjust(20,'~'))
+print(s5.zfill(5))# zfill表示0填充，也就是用0来填充，zfill(5)意思是想要5个数，但是s5只有3个数，所以输出00123用0
+# 填至5个字符
+
+# 格式化
+a,b = 123,321
+print('{0} / {1} = {2: .2%}'.format(a,b,a / b))# {0}里面加数字就是代表对应的编码，也就是012~
+# 其实里面可以不加数字。2代表的也是对应编码。：表示对输出数的要求，什么要求呢？.2保留2位小数，%转化为%的形式且加上%
+# format就是把format括号里的变量按顺序替换成前面的{0}，{1}之类
+print('{0} * {1} = {2:.4e}'.format(a,b,a * b))# e就是科学计数法
+print(f'{a} * {b} = {a * b:.4e}')# 前面说的{0} * {1}相当于f'{a} * {b}，都一个效果
+# 修剪
+s6 = ' ~~~~~~hello~~~~~~ '
+print(s6.strip())# 左右两边同时进行，修剪掉空格
+print(s6.strip().lstrip('~'))# 修剪左边的~
+print(s6.strip().rstrip('~'))# 修剪右边的~
+print(s6.rstrip('~'))# 如果是这样，从右边开始修剪，一遇到空格就罢工了，因为它是修剪~的，必须一路上遇到的都是~
+print(s6.strip().strip('~'))# 两边同时修剪~
+# 替换
+print(s6.replace('~',''))# replace('替换前','替换后')
+print(s6.replace('~','',2))# replace('替换前','替换后',替换次数)
+print(s6.replace('~','#').replace(' ',''))# 可以连续用替换
+# 拆分
+s7 = 'ant, bird, cat, dog, eagle, fox, giraffe'
+print(s7.split())# 这样相当于以空格为标准进行拆分，输出的元素带，我们可以这样
+print(s7.split(', '))# 更改它拆分的标准
+print(s7.split(', ',2))# split('拆分标准',拆分次数)
+s8 = ['131','5566','7788']
+print('~'.join(s8)) #字符串可以连接。print('连接的符号'.join(选择下手对象))
+# 编码和解码
+print('骆昊'.encode())# 使它转化为二进制形式的编码
+print('骆昊'.encode('gbk'))# 使它转化为gbk形式
+print('🍎'.encode())
+print(b'\xf0\x9f\xa5\xb4'.decode())# b开头的编码，decode()表示解码
