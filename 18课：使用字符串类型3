@@ -1,0 +1,10 @@
+
+import time
+
+greeting = '及你太美' + '  ' * 5
+
+while True:
+
+    print(greeting)
+    greeting = greeting[1:] + greeting[0]# greeting[1:],从1编码取到尾
+    time.sleep(0.2)
