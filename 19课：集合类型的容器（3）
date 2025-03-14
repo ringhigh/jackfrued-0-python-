@@ -1,0 +1,24 @@
+set1 = {1,10,100}
+
+# 添加元素
+set1.add(1000)
+set1.add(10000)
+print(set1)
+
+# 删除元素
+set1.discard(10)# 保险方法，如果删除了集合中没有的元素也不会报错
+set1.remove(100)# 二者都可以删除元素
+# set1.remove(999)# 如果删除集合中没有的元素，就会报错
+print(set1)
+
+set1.pop()# 随机删除元素
+print(set1)
+
+# 清空元素
+set1.clear()
+print(set1)
+
+# 创建空集合方式
+set2 = set()# 这是空集合创建方式
+set2 = {}# 这是字典而不是集合
+print(type(set2))
