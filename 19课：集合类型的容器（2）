@@ -1,0 +1,39 @@
+# 集合的运算
+set1 = {'python','C++','Java','Swift','Kotlin'}
+print('Ruby'in set1)
+print('C++' not in set1)# 集合也遵循in和not in的运算
+
+set2 = {1,2,3,4,5,6,7}
+set3 = {2,4,6,8,10}
+
+# 交集
+print(set2 & set3)# 交集就是互有的元素，可以用&或者intersection函数来表示
+print(set2.intersection(set3))
+
+# 并集
+print(set2 | set3)# 两个集合相加，然后互异性留下元素
+print(set2.union(set3))# union也可
+
+#差集
+print(set2 - set3)# set2里有，set3里没有的元素
+print(set2.difference(set3))
+print(set3 - set2)# 谁差谁结果不一样
+print(set3.difference(set2))
+
+# 对称差
+print(set2 ^ set3)# 两个集合的并集减去两个集合交集的部分
+print(set2.symmetric_difference(set3))
+
+# 子集
+print(set2 <= set3)# 判断set2是不是set3子集
+print(set2.issubset(set3))# 或者这样
+print(set3 < set(range(1,11)))# set3是不是集合为1-10的真子集？
+print(set2.issubset(set(range(1,11))))# set2是不是集合为1-10的子集？
+
+# 超集
+print(set3 > {2,6,10})# set3是否是集合{2,6,10}的超集？就是{2,6,10}中的所有数，set3都有
+print(set3.issuperset({2,6,10}))
+
+# 是否相交
+print({2,4,6}.isdisjoint({1,3,5}))# 表示不相交于~
+print({2,4,6}.isdisjoint({2,3,5}))
