@@ -1,0 +1,29 @@
+# 字典
+xinhua = {
+    '麓':'山脚下',
+    '路':'道'
+}# 以逗号为分隔符
+print(xinhua)
+
+# 字典里的键必须是不可变类型，里面放什么都行，字典里可以有字典，可以有集合等
+# 字典必须键值结合，就像1：‘马车’，这样，冒号后是值
+# dict是字典的构造器，用于构造字典
+
+items1 = dict(zip('ABCDE',range(1,6)))# zip的作用是A：1，形成键值
+print(items1)# 这样相当于前面提供键，后面提供值
+items2 = dict(zip('ABCDE',range(1,11)))# (1,11)提供的值太多了，用不完，只能输出用完的，所以和上面的输出一样
+print(items2)
+
+items3 = {x: x ** 3 for x in range(1,6)}# 也可以用构造的方法做字典
+print(items3)
+
+# for循环，会拿到字典里所有的键
+for key in person1:
+    print(key)
+
+for key in person1.values():# 想拿到值就得这样
+    print(key)
+
+# 如果想拿到键和值，可以这样
+for key,value in person1.items():# items()会提供一个二元组，前面是key后面是value
+    print(key,value)
