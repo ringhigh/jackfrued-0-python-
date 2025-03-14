@@ -1,0 +1,25 @@
+person = dict(name = '孙小美',birth = '1993',sex = False)
+
+# 成员运算
+print('name' in person)# 索引
+print('tels' in person)
+
+# 字典要用键去拿到值，而不是0123
+print(person['name'])# 会返回名字
+print(person['birth'])
+person['birth'] = '2005'# 可以这样修修改
+person['address'] = 'NewYork'# 可以加地址
+person['signature'] = '卢本伟牛逼！'
+print(person)
+
+# print(person['tels'])# 如果索引找不到想要的值就会报错
+print(person.get('birth'))# 用这种方法，就算找不到也不会报错
+print(person.get('births'))
+print(person.get('tel',13488974678))# 这么写。如果找不到tel就会输出[13488974678]
+
+# 删除元素
+print(person.pop('signature'))# 这样的话会删去这一栏键值，输入的是键，它会输出值，然后整个键值会被删除
+print(person.popitem())# 随机删除键值对
+del person['sex']# 指定删除
+person.clear()# 清空键值对，最后剩下空的花括号
+print(person)
