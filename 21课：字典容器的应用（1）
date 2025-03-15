@@ -1,0 +1,13 @@
+sentence = input('请输入： ').lower()# 输入句子，用lower()让他们全变成小写，这样就忽略大小写了
+results = {}# 创建一个空字典
+for ch in sentence:# 遍历句子
+    if 'a' <= ch <= 'z':# 在a和z之间遍历
+        results[ch] = results.get(ch,0)+1# results[ch]里的字母 = results.get(ch,0)+1 值（ch，如果第一次出现就赋值为0）然后+1，否则直接+1
+    #     if ch not in results:# 如果字母不在里面
+    #         results[ch] = 0# 把这个值设为0
+    # results[ch] += 1# 不然就在次数上+1,实际上第一次出现的字母会经历0-1的赋值过程
+# print(results)
+# print(sorted(results))# sorted这个函数能排序，但是只能排字母表的序
+sorted_keys = sorted(results,key=results.get,reverse=True)# sorted（对输出结果排序，key=键.得到他们的值，取反（以拿到从高到低））
+for key in sorted_keys:# 遍历键
+    print(f'{key}: {results[key]:>3d}次')# print(f'{键}: {字典的[值]:居右，前面空3格}次')
