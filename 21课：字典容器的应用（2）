@@ -1,0 +1,7 @@
+# 生成式语法
+results = {key: value for key,value in stocks.items() if value > 100}
+print(results)
+
+sorted_key = sorted(stocks,key=stocks.get,reverse=True)# 排序（被排序对象，取键和值，排序顺序取反）
+for key in sorted_key:# 这里的key只是一个虚名，实际上是为了让字典输出
+    print(f'{key:<5s}:{stocks[key]:8.2f}')# stocks[key]键值的值,5个空格，s字符串形式输出，8，8个空格
