@@ -1,0 +1,36 @@
+# fm = 1
+# for num in range(2,m-1):
+#     fm*=num
+#
+# # 计算m-n的阶乘
+# fk = 1
+# for num in range(2,m-n+1):
+#     fk*=num
+#
+# # 函数
+# def function(arg1,arg2):# function函数名命名规则和变量一样，(arg1,arg2)有两个参数就逗号，参数
+#     return 'Something'
+
+# # m的阶乘
+# from math import factorial as fac # 这样就可以修改原本阶乘的名字了
+# 
+# 
+# m = int(input('m = '))
+# n = int(input('n = '))
+# 
+# 
+# # def fac(num):
+# #     result = 1
+# #     for i in range(2,num + 1):
+# #         result *= i
+# #     return result# 给一个自变量，返回一个因变量
+# 
+# print(fac(m) // fac(n) // fac(m-n) )
+
+# 组合数
+from math import comb# 想实现组合数，用这个comb
+
+m = int(input('m = '))
+n = int(input('n = '))
+
+print(comb(m,n))
