@@ -1,0 +1,25 @@
+m = int(input('请输入第一条边长度 '))
+n = int(input('请输入第二条边长度 '))
+l = int(input('请输入第三条边长度 '))
+
+def perimeter(num1,num2,num3):
+    return num1 + num2 + num3
+
+def area(num1,num2,num3):
+    s = (perimeter(num1,num2,num3) // 2)
+    area = (s * (s-num1) * (s-num2) * (s-num3)) ** 0.5
+    return area
+
+if n + m > l and n + l > m and m + l > n:
+    print('该三角形周长为 ',perimeter(m,n,l))
+    print('该三角形面积为 ',area(m,n,l))
+
+# x,y,z = map(float,input('请输入三条边的长度： ‘).split()
+# split()用空格分隔
+# map映射，把split()分隔的小数一一拿过来
+# def perimeter(num1,num2,num3,/):# 如果后面有斜杠，前面的数只能和调用函数的数一一对应
+# 比如if n + m > l and n + l > m and m + l > n:
+#     print('该三角形周长为 ',perimeter(m=num2,n=num1,l=num3))是不被允许的
+# --------------
+# def area(*，num1,num2,num3):如果前面有星号，那么调用函数时必须用num1,num2,num3作为名字
+# 就算你自己定义了名字，到最后也得print(m=num1,n=num2,l=num3)，不然会报错
